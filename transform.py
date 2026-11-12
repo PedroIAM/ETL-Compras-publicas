@@ -24,4 +24,4 @@ df_compras_publicas['ano_compra_pncp'] = pd.to_numeric(df_compras_publicas['ano_
 
 print(df_compras_publicas.info())
 print(df_compras_publicas.head(5))
-print("teste")
+print("teste atualizandooo..")
