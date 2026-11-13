@@ -37,32 +37,34 @@ def subindo_dados_validos():
         if not registros:
              logging.info("Nenhum registro válido para subir")
              return
+
         with engine.begin() as conect:
-         conect.execute(text(
+            conect.execute(text(f"DELETE FROM {banco_valido}"))
+
+            conect.execute(text(
             f"""INSERT INTO {banco_valido}(
-        id_compra,
-        sigla_uf,
-        nome_municipio,
-        ano_compra_pncp,
-        nome_orgao,
-        orcamento_sigiloso,
-        objeto_compra,
-        valor_total_estimado,
-        data_encerramento_proposta
-        ) VALUES (
-        :id_compra,
-        :sigla_uf,
-        :nome_municipio,
-        :ano_compra_pncp,
-        :nome_orgao,
-        :orcamento_sigiloso,
-        :objeto_compra,
-        :valor_total_estimado,
-        :data_encerramento_proposta
-        )
-        """
-        ),
-        registros)
+                id_compra,
+                sigla_uf,
+                nome_municipio,
+                ano_compra_pncp,
+                nome_orgao,
+                orcamento_sigiloso,
+                objeto_compra,
+                valor_total_estimado,
+                data_encerramento_proposta
+            ) VALUES (
+                :id_compra,
+                :sigla_uf,
+                :nome_municipio,
+                :ano_compra_pncp,
+                :nome_orgao,
+                :orcamento_sigiloso,
+                :objeto_compra,
+                :valor_total_estimado,
+                :data_encerramento_proposta
+            )
+            """),
+            registros)
          
 def subindo_dados_invalidos():
         if not registros_invalidos:
