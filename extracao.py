@@ -1,12 +1,8 @@
 import pandas as pd
 import logging
-
-#Importando LOGGING
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(message)s"
-)
-
+from config_logging import chamar_logging
+#Chamando Logging
+chamar_logging()
 
 logging.info("Iniciando Pipeline...")
 

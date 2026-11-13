@@ -1,12 +1,8 @@
 import pandas as pd
 import logging
+from config_logging import chamar_logging
 
-#Importando LOGGING
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s | %(levelname)s | %(message)s"
-)
-
+chamar_logging()
 
 df_compras_publicas = pd.read_csv("dados_reformulados.csv")
 
