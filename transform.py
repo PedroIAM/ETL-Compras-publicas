@@ -4,7 +4,7 @@ from config_logging import chamar_logging
 
 chamar_logging()
 
-df_compras_publicas = pd.read_csv("dados_reformulados.csv")
+df_compras_publicas = pd.read_csv("dados_reformulados_silver.csv")
 
 
 #Tratamento Formatação
@@ -82,3 +82,4 @@ else:
     logging.warning("Porcentagem acima do limite!")
 
 df_compras_validos.to_csv("dados_tratados.csv",index=False)
+df_compras_invalidos.to_csv("dados_invalidos.csv",index=False)

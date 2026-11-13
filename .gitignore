@@ -1,3 +1,5 @@
 .env
 compras_publicas.csv
-dados_reformulados.csv
+dados_reformulados_silver.csv
+dados_tratados.csv
+dados_invalidos.csv
