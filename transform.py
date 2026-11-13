@@ -80,3 +80,5 @@ if porcentagem_aceitacao < 10:
     
 else:
     logging.warning("Porcentagem acima do limite!")
+
+df_compras_validos.to_csv("dados_tratados.csv",index=False)
