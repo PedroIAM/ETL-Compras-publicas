@@ -45,5 +45,28 @@ try:
 
     logging.info("Etapa Tratamento Tipo Colunas: Concluída")
 except Exception as e:
-    logging.exception(f"Erro na etapa Tratamento Tipo Colunbas - {e}")
+    logging.exception(f"Erro na etapa Tratamento Tipo Colunas - {e}")
+    raise
+
+#Filtrando dados válidos e inválidos
+
+try:
+    filtro_tratamento = (
+        df_compras_publicas['sigla_uf'].isnull() |
+        df_compras_publicas['nome_municipio'].isnull() |
+        df_compras_publicas['ano_compra_pncp'].isnull() |
+        df_compras_publicas['id_compra'].isnull() |
+        df_compras_publicas['nome_orgao'].isnull() |
+        df_compras_publicas['objeto_compra'].isnull() 
+    )
+
+    df_compras_validos = df_compras_publicas[~filtro_tratamento]
+    df_compras_invalidos = df_compras_publicas[filtro_tratamento]
+
+    logging.info("Etapa Filtrando dados: Concluída")
+
+except Exception as erro:
+    logging.exception(f"Erro na etapa Filtrando dados - {erro}")
+    raise
+
 
