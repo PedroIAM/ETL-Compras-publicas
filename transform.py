@@ -70,3 +70,17 @@ except Exception as erro:
     raise
 
 
+#
+df_dados_validos = len(df_compras_validos)
+df_dados_recebidos = len(df_compras_publicas)
+df_dados_invalidos = len(df_compras_invalidos)
+porcentagem_aceitacao = (df_dados_invalidos / df_dados_recebidos) * 100
+logging.info(f"Dados Válidos: {df_dados_validos}")
+logging.info(f"Dados Inválidos: {df_dados_invalidos}")
+logging.info(f"Dados Recebidos: {df_dados_recebidos}")
+if porcentagem_aceitacao < 10:
+    logging.info(f"Porcentagem Aceitação: {porcentagem_aceitacao}")
+    logging.info("Porcentagem Aceita!")
+    
+else:
+    logging.warning("Porcentagem acima do limite!")
