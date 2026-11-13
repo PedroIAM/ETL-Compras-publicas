@@ -74,7 +74,7 @@ A configuração fica centralizada em `config_logging.py`. O formato inclui data
 
 ```bash
 git clone https://github.com/PedroIAM/ETL-Compras-publicas.git
-cd <nome-do-repositorio>
+cd https://github.com/PedroIAM/ETL-Compras-publicas.git
 pip install -r requirements.txt
 ```
 
